@@ -13,9 +13,10 @@ class MoonViewController: UIViewController {
     @IBOutlet weak var earthWeight: UILabel!
     @IBOutlet weak var moonWeight: UILabel!
     @IBOutlet weak var moonMessage: UILabel!
+    var moonMessageString:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.moonMessage.text = moonMessageString
         // Do any additional setup after loading the view.
     }
 

@@ -13,9 +13,10 @@ class JupiterViewController: UIViewController {
     @IBOutlet weak var earthWeight: UILabel!
     @IBOutlet weak var jupiterWeight: UILabel!
     @IBOutlet weak var jupiterMessage: UILabel!
+    var jupiterMessageString:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.jupiterMessage.text = jupiterMessageString
         // Do any additional setup after loading the view.
     }
 
