@@ -19,7 +19,7 @@ class MoonViewController: UIViewController {
         super.viewDidLoad()
         self.moonMessage.text = moonMessageString
         self.earthWeight.text = String(earthWeightValue)
-        self.moonWeight.text = String(earthWeightValue*0.165)
+        self.moonWeight.text = String(earthWeightValue*0.1653)
         // Do any additional setup after loading the view.
     }
 
