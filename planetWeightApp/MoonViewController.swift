@@ -13,10 +13,13 @@ class MoonViewController: UIViewController {
     @IBOutlet weak var earthWeight: UILabel!
     @IBOutlet weak var moonWeight: UILabel!
     @IBOutlet weak var moonMessage: UILabel!
+    var earthWeightValue:Double = 0
     var moonMessageString:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.moonMessage.text = moonMessageString
+        self.earthWeight.text = String(earthWeightValue)
+        self.moonWeight.text = String(earthWeightValue*0.165)
         // Do any additional setup after loading the view.
     }
 
@@ -24,16 +27,16 @@ class MoonViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "moonToEarthSegue" {
+            let earthDestination = segue.destination as! ViewController
+            earthDestination.earthMessageString = "Coming from Moon"
+            earthDestination.earthWeightValue = self.earthWeightValue
+        }else if segue.identifier == "moonToJupiterSegue" {
+            let jupiterDestination = segue.destination as! JupiterViewController
+            jupiterDestination.jupiterMessageString = "Coming from Moon"
+            jupiterDestination.earthWeightValue = self.earthWeightValue
+        }
     }
-    */
-
 }
