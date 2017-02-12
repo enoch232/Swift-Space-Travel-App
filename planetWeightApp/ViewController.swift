@@ -12,11 +12,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var earthMessage: UILabel!
     @IBOutlet weak var weightTextField: UITextField!
-    var earthMessageString:String = ""
     var earthWeightValue:Double = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.earthMessage.text = earthMessageString
         self.weightTextField.text = String(earthWeightValue)
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -32,6 +30,17 @@ class ViewController: UIViewController {
         let moonDestination = segue.destination as! MoonViewController
         moonDestination.moonMessageString = "Coming from Earth"
         moonDestination.earthWeightValue = Double(self.weightTextField.text!)!
+    }
+    
+    @IBAction func unwindToViewController1(segue: UIStoryboardSegue) {
+        if let moonSource = segue.source as? MoonViewController{
+            self.earthWeightValue = moonSource.earthWeightValue
+            self.earthMessage.text = "Coming from Moon!"
+        }else if let jupiterSource = segue.source as? JupiterViewController{
+            self.earthWeightValue = jupiterSource.earthWeightValue
+            self.earthMessage.text = "Coming from Jupiter!"
+        }
+        
     }
 
 

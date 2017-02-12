@@ -19,7 +19,7 @@ class MoonViewController: UIViewController {
         super.viewDidLoad()
         self.moonMessage.text = moonMessageString
         self.earthWeight.text = String(earthWeightValue)
-        self.moonWeight.text = String(earthWeightValue*0.1653)
+        self.moonWeight.text = String(earthWeightValue/6)
         // Do any additional setup after loading the view.
     }
 
@@ -29,14 +29,16 @@ class MoonViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "moonToEarthSegue" {
-            let earthDestination = segue.destination as! ViewController
-            earthDestination.earthMessageString = "Coming from Moon"
-            earthDestination.earthWeightValue = self.earthWeightValue
-        }else if segue.identifier == "moonToJupiterSegue" {
+        if segue.identifier == "moonToJupiterSegue" {
             let jupiterDestination = segue.destination as! JupiterViewController
             jupiterDestination.jupiterMessageString = "Coming from Moon"
             jupiterDestination.earthWeightValue = self.earthWeightValue
         }
+    }
+    
+    @IBAction func unwindToViewController2(segue: UIStoryboardSegue) {
+        let jupiterSource = segue.source as! JupiterViewController
+        self.earthWeightValue = jupiterSource.earthWeightValue
+        self.moonMessage.text = "Coming from Jupiter!"
     }
 }
