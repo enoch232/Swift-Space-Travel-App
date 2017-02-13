@@ -64,11 +64,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="earth" translatesAutoresizingMaskIntoConstraints="NO" id="iGD-zy-lxq">
+                                <rect key="frame" x="67" y="238" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="2ly-BB-FoI"/>
                     <connections>
+                        <outlet property="earthImage" destination="iGD-zy-lxq" id="J9w-Tf-HHL"/>
                         <outlet property="earthMessage" destination="0YP-dj-1CI" id="dKA-Pu-lU8"/>
                         <outlet property="weightTextField" destination="ZoZ-ch-sdn" id="l9V-De-9la"/>
                     </connections>
@@ -168,6 +173,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="moon" translatesAutoresizingMaskIntoConstraints="NO" id="TB0-e6-8wx">
+                                <rect key="frame" x="112" y="502" width="130" height="131"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -294,6 +303,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jupiter" translatesAutoresizingMaskIntoConstraints="NO" id="LK2-Zf-Qx3">
+                                <rect key="frame" x="105" y="488" width="179" height="171"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -310,4 +323,9 @@
             <point key="canvasLocation" x="636" y="571.66416791604206"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="earth" width="599" height="599"/>
+        <image name="jupiter" width="700" height="700"/>
+        <image name="moon" width="386" height="364"/>
+    </resources>
 </document>

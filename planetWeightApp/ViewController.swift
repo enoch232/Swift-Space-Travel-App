@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var earthImage: UIImageView!
     @IBOutlet weak var earthMessage: UILabel!
     @IBOutlet weak var weightTextField: UITextField!
     var earthWeightValue:Double = 0
